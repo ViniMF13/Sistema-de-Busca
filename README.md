@@ -1,30 +1,29 @@
-# Armazéns Hanoi - Simulação Logística com Eventos Discretos
+# Sistema de consultas
 
-Este projeto simula um sistema logístico de transporte de pacotes entre armazéns conectados em uma rede com topologia de grafo. Utiliza programação orientada a objetos em C++ e modelagem por eventos discretos para representar o fluxo de pacotes, armazenamento em seções e transporte entre os nós da rede.
+Este projeto implementa um sistema de consultas de pacotes em uma rede logística de entregas. 
 
 ## 🧠 Objetivo
 
-O objetivo é estudar e implementar um sistema de simulação realista envolvendo:
-- Roteamento de pacotes entre armazéns
-- Armazenamento com política LIFO (Last-In, First-Out)
-- Transporte periódico e com capacidade limitada
-- Agendamento e execução de eventos discretos
-- Coleta e análise de métricas experimentais de desempenho
+O objetivo é implementar um sistema de busca eficiente para um sistema logístico que contém grandes volumes de pacotes simultaneos.
+O sistema Possibilita dois tipos de Consultas:
+1. Pacote:
+  - Dado o ID de um pacote, mostra o histórico de eventos do pacote até o momento atual.
+2. Cliente:
+  - Dado um remente ou destinatário, mostra os pacotes que estão cadastrados no seu nome.
 
 ## 🛠️ Estrutura do Projeto
 
 ```
 ├── src/
-│   ├── main.cpp                # Função principal e loop da simulação
-│   ├── Grafo.cpp               # Representação da rede de armazéns
-│   ├── Armazem.cpp             # Armazenamento e seções
-│   ├── Pacote.cpp              # Dados e estado de cada pacote
-│   ├── Transporte.cpp          # Módulo de transporte com rearmazenamento
-│   ├── ListaPacotes.cpp        # Lista ligada com pacotes
-│   └── Escalonador.cpp         # Fila de prioridade para eventos
+│   ├── main.cpp                # Função principal            
+│   ├── Evento.cpp              # Representação de um Evento no sistema
+│   ├── ListaEventos.cpp        # Lista de Eventos no Sistema
+│   ├── IndiceClientes.cpp      # Indice para busca de clientess
+│   ├── IndicePacotes.cpp       # Indice para busca de Pacotes
+│   └── IndiceEventos.cpp       # Indice para busca de Eventos
 ├── include/                    # Headers correspondentes
 ├── bin/                        # Binários compilados
-├── input.txt                   # Arquivo de entrada com configuração e pacotes
+├── input.txt                   # Arquivo de entrada eventos
 ├── README.md                   # Este arquivo
 └── Makefile                    # Compilação automatizada
 ```
@@ -38,7 +37,7 @@ make
 
 ### Executar
 ```bash
-./bin/tp2.out input.txt
+./bin/tp3.out input.txt
 ```
 
 > O arquivo `input.txt` deve conter a configuração do sistema (parâmetros logísticos, matriz de conexões e pacotes a serem transportados).
@@ -47,15 +46,13 @@ make
 
 A simulação foi utilizada para investigar o impacto de diferentes fatores, como:
 
-- Variação do número de armazéns
+- Variação do número de eventos
 - Quantidade de pacotes
-- Capacidade de transporte
-- Intervalos e tempos de transporte
+- Quantidade de clientes
 
 ### Métricas observadas:
-- Tempo médio de entrega
-- Número de rearmazenamentos
-- Tempo de execução
+- Tempo médio de busca
+- Tempo de execução do sistema 
 
 Gráficos e tabelas estão disponíveis na documentação em LaTeX.
 
@@ -64,29 +61,20 @@ Gráficos e tabelas estão disponíveis na documentação em LaTeX.
 O projeto aplica:
 - Programação defensiva (checagens de ponteiros nulos, limites de array, falhas de abertura de arquivos)
 - Liberação de memória dinâmica (destrutores customizados, `delete[]`)
-- Cópia profunda em objetos complexos (`Pacote`)
 - Validação de entradas e controle de estado
 
 ## 🧪 Tecnologias
 
 - C++11
-- Estruturas de dados: listas ligadas, heaps, pilhas, matrizes
-- Simulação orientada a eventos
-- Algoritmos de busca em largura (BFS)
-- Modelagem discreta de sistemas logísticos
+- Estruturas de dados: listas ligadas, Arvores AVl
+- Algoritmos de rebalanceamento em arvore
 
 ## 📘 Documentação
 
 A documentação técnica completa foi elaborada em LaTeX e inclui:
-- Diagrama de classes UML
 - Análise de complexidade de funções principais
 - Estratégias de robustez
 - Análise experimental com gráficos
-
-## 👨‍💻 Autor
-
-Vinicius Sv13  
-Contato: [Seu e-mail ou LinkedIn]
 
 ## 📝 Licença
 
