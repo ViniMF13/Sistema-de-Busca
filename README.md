@@ -1,81 +1,81 @@
-# Sistema de consultas
+# Query System
 
-Este projeto implementa um sistema de consultas de pacotes em uma rede logística de entregas. 
+This project implements a package query system for a logistics delivery network.
 
-## 🧠 Objetivo
+## 🧠 Objective
 
-O objetivo é implementar um sistema de busca eficiente para um sistema logístico que contém grandes volumes de pacotes simultaneos.
-O sistema Possibilita dois tipos de Consultas:
-1. Pacote:
-  - Dado o ID de um pacote, mostra o histórico de eventos do pacote até o momento atual.
-2. Cliente:
-  - Dado um remente ou destinatário, mostra os pacotes que estão cadastrados no seu nome.
+The objective is to implement an efficient search system for a logistics system that contains large volumes of simultaneous packages.
+The system enables two types of queries:
+1. Package:
+   - Given a package ID, it shows the history of events for the package up to the current moment.
+2. Client:
+   - Given a sender or recipient, it shows the packages that are registered under their name.
 
-## 🛠️ Estrutura do Projeto
+## 🛠️ Project Structure
 
 ```
 ├── src/
-│   ├── main.cpp                # Função principal            
-│   ├── Evento.cpp              # Representação de um Evento no sistema
-│   ├── ListaEventos.cpp        # Lista de Eventos no Sistema
-│   ├── IndiceClientes.cpp      # Indice para busca de clientess
-│   ├── IndicePacotes.cpp       # Indice para busca de Pacotes
-│   └── IndiceEventos.cpp       # Indice para busca de Eventos
-├── include/                    # Headers correspondentes
-├── bin/                        # Binários compilados
-├── input.txt                   # Arquivo de entrada eventos
-├── README.md                   # Este arquivo
-└── Makefile                    # Compilação automatizada
+│   ├── main.cpp                # Main function            
+│   ├── Evento.cpp              # Representation of an Event in the system
+│   ├── ListaEventos.cpp        # List of Events in the System
+│   ├── IndiceClientes.cpp      # Index for client search
+│   ├── IndicePacotes.cpp       # Index for package search
+│   └── IndiceEventos.cpp       # Index for event search
+├── include/                    # Corresponding headers
+├── bin/                        # Compiled binaries
+├── input.txt                   # Event input file
+├── README.md                   # This file
+└── Makefile                    # Automated compilation
 ```
 
-## ▶️ Execução
+## ▶️ Execution
 
-### Compilar
+### Compile
 ```bash
 make
 ```
 
-### Executar
+### Run
 ```bash
 ./bin/tp3.out input.txt
 ```
 
-> O arquivo `input.txt` deve conter a configuração do sistema (parâmetros logísticos, matriz de conexões e pacotes a serem transportados).
+> The `input.txt` file should contain the system configuration (logistics parameters, connection matrix and packages to be transported).
 
-## 📊 Análise Experimental
+## 📊 Experimental Analysis
 
-A simulação foi utilizada para investigar o impacto de diferentes fatores, como:
+The simulation was used to investigate the impact of different factors, such as:
 
-- Variação do número de eventos
-- Quantidade de pacotes
-- Quantidade de clientes
+- Variation in the number of events
+- Number of packages
+- Number of clients
 
-### Métricas observadas:
-- Tempo médio de busca
-- Tempo de execução do sistema 
+### Observed metrics:
+- Average search time
+- System execution time
 
-Gráficos e tabelas estão disponíveis na documentação em LaTeX.
+Graphs and tables are available in the LaTeX documentation.
 
-## 🔐 Robustez e Engenharia
+## 🔐 Robustness and Engineering
 
-O projeto aplica:
-- Programação defensiva (checagens de ponteiros nulos, limites de array, falhas de abertura de arquivos)
-- Liberação de memória dinâmica (destrutores customizados, `delete[]`)
-- Validação de entradas e controle de estado
+The project applies:
+- Defensive programming (null pointer checks, array bounds, file opening failures)
+- Dynamic memory release (custom destructors, `delete[]`)
+- Input validation and state control
 
-## 🧪 Tecnologias
+## 🧪 Technologies
 
 - C++11
-- Estruturas de dados: listas ligadas, Arvores AVl
-- Algoritmos de rebalanceamento em arvore
+- Data structures: linked lists, AVL trees
+- Tree rebalancing algorithms
 
-## 📘 Documentação
+## 📘 Documentation
 
-A documentação técnica completa foi elaborada em LaTeX e inclui:
-- Análise de complexidade de funções principais
-- Estratégias de robustez
-- Análise experimental com gráficos
+The complete technical documentation was prepared in LaTeX and includes:
+- Complexity analysis of main functions
+- Robustness strategies
+- Experimental analysis with graphs
 
-## 📝 Licença
+## 📝 License
 
-Este projeto é de uso acadêmico e pessoal. Sinta-se à vontade para estudar, modificar e expandir.
+This project is for academic and personal use. Feel free to study, modify and expand.
